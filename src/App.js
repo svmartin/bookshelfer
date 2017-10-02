@@ -7,6 +7,16 @@ class BooksApp extends React.Component {
   state = {
     books: []
   }
+
+  render() {
+    return(
+      <div className="aa">
+        <Route exact path="/" render={() =>
+          <Shelves books={this.state.books} />}
+        />
+      </div>
+    )
+  }
 }
 
 export default BooksApp
