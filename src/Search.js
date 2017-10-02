@@ -11,6 +11,12 @@ class Search extends React.Component {
     }
   }
 
+  updateQuery = (query) => {
+    this.setState(
+      { query: query }
+    )
+  }
+
   render() {
     return (
       <div className="search-books">
