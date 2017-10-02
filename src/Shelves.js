@@ -14,9 +14,9 @@ class Shelves extends React.Component {
         </div>
         <div className="list-books-content">
           <div>
-            <Shelf section={"Want to Read"} books={this.state}/>
-            <Shelf section={"Currently Reading"} />
-            <Shelf section={"Have Read"}/>
+            <Shelf section={"Want to Read"} books={this.props.books}/>
+            <Shelf section={"Currently Reading"} books={this.props.books}/>
+            <Shelf section={"Have Read"} books={this.props.books}/>
           </div>
         </div>
         <OpenSearch />
