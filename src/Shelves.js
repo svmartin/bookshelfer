@@ -26,6 +26,6 @@ class Shelves extends React.Component {
 }
 export default Shelves;
 
-Shelf.propTypes = {
+Shelves.propTypes = {
   books: PropTypes.array.isRequired
 }
