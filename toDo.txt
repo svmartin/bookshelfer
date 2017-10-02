@@ -1,6 +1,8 @@
 add files for each component:
 *book: vvvvv
 **Shelf: one of 3 shelves, which will hold 0-many books
+-Each shelf will need this.props.books...we will...hmmmm...we need to iterate over books in each shelf...
+
 ***Shelves: will hold the 3 bookshelves (each shelf will have a title/section)
 ***Search: will allow user to search for books AND add/remove/change book location
 ****Main App: will hold the Shelves component and route to either Shelves or search
