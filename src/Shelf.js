@@ -13,3 +13,5 @@ class Shelf extends React.Component {
     )
   }
 }
+
+export default Shelf

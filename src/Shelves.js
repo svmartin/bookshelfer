@@ -1,4 +1,5 @@
 import React from "react";
+import Shelf from './Shelf'
 
 class Shelves extends React.Component {
 
@@ -11,7 +12,9 @@ class Shelves extends React.Component {
         </div>
         <div className="list-books-content">
           <div>
-
+            <Shelf />
+            <Shelf />
+            <Shelf />
           </div>
         </div>
         {/* add here ?*/}
