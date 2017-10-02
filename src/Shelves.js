@@ -12,9 +12,9 @@ class Shelves extends React.Component {
         </div>
         <div className="list-books-content">
           <div>
-            <Shelf />
-            <Shelf />
-            <Shelf />
+            <Shelf section={"Want to Read"}/>
+            <Shelf section={"Currently Reading"} />
+            <Shelf section={"Have Read"}/>
           </div>
         </div>
         {/* add here ?*/}

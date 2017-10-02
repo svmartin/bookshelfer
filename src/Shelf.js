@@ -5,7 +5,7 @@ class Shelf extends React.Component {
   render() {
     return (
       <div className="bookshelf">
-        <h2 className="bookshelf-title"></h2>
+        <h2 className="bookshelf-title">{this.props.section}</h2>
         <ol className="bookshelf-books">
           <li>test book</li>
         </ol>
@@ -15,3 +15,7 @@ class Shelf extends React.Component {
 }
 
 export default Shelf
+
+Shelf.propTypes = {
+  section: PropTypes.string.isRequired
+}
