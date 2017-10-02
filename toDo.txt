@@ -8,3 +8,5 @@ add files for each component:
 ### ChangeShelf (drop-down component with 4 options: )
 ### OpenSearch (component that is accessible from "main" page...when clicked, brings user to search)
 ### index.js (add react-router and wrap main App component in router) AND grab DIV: root
+
+*** note to self: 
