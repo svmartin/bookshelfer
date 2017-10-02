@@ -18,7 +18,7 @@ class Shelves extends React.Component {
             <Shelf section={"Have Read"}/>
           </div>
         </div>
-        {/* add here ?*/}
+        <OpenSearch />
       </div>
     );
   }
