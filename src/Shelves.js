@@ -1,4 +1,5 @@
 import React from "react";
+import OpenSearch from './OpenSearch'
 import Shelf from './Shelf'
 
 class Shelves extends React.Component {
