@@ -1,4 +1,5 @@
 import React from 'react'
+import BooksAPI from './BooksAPI'
 import { Link } from 'react-router-dom'
 
 class Search extends React.Component {
@@ -15,6 +16,17 @@ class Search extends React.Component {
     this.setState(
       { query: query }
     )
+
+    if (query) {
+      BooksAPI.search(query).then((books) => {
+        if (!books.error) {
+          this.setState({ results: books })
+        } else {
+          this.setState({ resulsts: []})
+          console.log(books.error)
+        }
+      })
+    }
   }
 
   render() {
