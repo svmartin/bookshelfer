@@ -1,4 +1,5 @@
 import React from 'react'
+import Book from './Book'
 import PropTypes from 'prop-types'
 
 class Shelf extends React.Component {
@@ -7,7 +8,7 @@ class Shelf extends React.Component {
       <div className="bookshelf">
         <h2 className="bookshelf-title">{this.props.section}</h2>
         <ol className="bookshelf-books">
-          <li>test book</li>
+          <Book />
         </ol>
       </div>
     )
