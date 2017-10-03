@@ -12,5 +12,3 @@ add files for each component:
 
 
 ### index.js (add react-router and wrap main App component in router) AND grab DIV: root
-
-*** workingOn: adding search functionality
