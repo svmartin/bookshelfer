@@ -1,5 +1,6 @@
 import React from 'react'
-import Book from './Book'
+// import Book from './Book'
+import ChangeShelf from './ChangeShelf'
 import PropTypes from 'prop-types'
 
 class ListBooksOnShelf extends React.Component {
@@ -15,7 +16,23 @@ class ListBooksOnShelf extends React.Component {
         <div className="bookshelf-books">
           <ol className="books-grid">
             {this.props.books.map((book) => (
-              <Book key={book.id} book={book} />
+              // <Book key={book.id} book={book} />
+              <li>
+                <div className="book">
+                  <div className="book-top">
+                  <div
+                    className="book-cover"
+                    style={{
+                      width: 128,
+                      height: 193,
+                      backgroundImage: "url(" + this.props.book.imageLinks.thumbnail + ")"
+                    }}
+                  />
+                  <ChangeShelf />
+                </div>
+                <div className="book-title">{this.props.book.title}</div>
+              </div>
+              </li>
             ))}
           </ol>
         </div>
