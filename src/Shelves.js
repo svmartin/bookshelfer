@@ -14,12 +14,19 @@ class Shelves extends React.Component {
         </div>
         <div className="list-books-content">
           <div>
+          {/* not keen on filtering 3 times, but will try
+            because I already have this.props.books available
+          */}
             <ListBooksOnShelf
             title={"Want to Read"}
-            section={"wantToRead"} books={this.props.books}/>
+            section={"wantToRead"}
+            books={this.props.books}/>
+
             <ListBooksOnShelf
             title={"Currently Reading"}
-            section={"currentlyReading"} books={this.props.books}/>
+            section={"currentlyReading"}
+            books={this.props.books}/>
+
             <ListBooksOnShelf
             title={"Have Read"}
             section={"read"}

@@ -4,10 +4,9 @@ import ChangeShelf from './ChangeShelf'
 import PropTypes from 'prop-types'
 
 class ListBooksOnShelf extends React.Component {
-  constructor(props) {
-    super(props);
-    let shelves = ["wantToRead", "currentlyReading", "read"]
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   render() {
     return (
