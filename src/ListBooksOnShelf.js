@@ -2,7 +2,7 @@ import React from 'react'
 import Book from './Book'
 import PropTypes from 'prop-types'
 
-class Shelf extends React.Component {
+class ListBooksOnShelf extends React.Component {
   constructor(props) {
     super(props);
     let shelves = ["wantToRead", "currentlyReading", "read"]
@@ -24,9 +24,9 @@ class Shelf extends React.Component {
   }
 }
 
-export default Shelf
+export default ListBooksOnShelf
 
-Shelf.propTypes = {
+ListBooksOnShelf.propTypes = {
   section: PropTypes.string.isRequired,
   books: PropTypes.array.isRequired
 }

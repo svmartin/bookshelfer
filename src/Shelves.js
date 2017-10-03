@@ -1,7 +1,7 @@
 import React from "react";
 import OpenSearch from './OpenSearch'
 import PropTypes from 'prop-types'
-import Shelf from './Shelf'
+import ListBooksOnShelf from './ListBooksOnShelf'
 
 class Shelves extends React.Component {
 
@@ -14,9 +14,10 @@ class Shelves extends React.Component {
         </div>
         <div className="list-books-content">
           <div>
-            <Shelf section={"Want to Read"} books={this.props.books}/>
-            <Shelf section={"Currently Reading"} books={this.props.books}/>
-            <Shelf section={"Have Read"} books={this.props.books}/>
+            <ListBooksOnShelf section={"Want to Read"} books={this.props.books}/>
+            <ListBooksOnShelf section={"Currently Reading"} books={this.props.books}/>
+            <ListBooksOnShelf section={"Have Read"}
+            books={this.props.books}/>
           </div>
         </div>
         <OpenSearch />
