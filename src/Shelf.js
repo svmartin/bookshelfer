@@ -3,6 +3,8 @@ import Book from './Book'
 import PropTypes from 'prop-types'
 
 class Shelf extends React.Component {
+  const shelves = ["wantToRead", "currentlyReading", "read"]
+  
   render() {
     return (
       <div className="bookshelf">
