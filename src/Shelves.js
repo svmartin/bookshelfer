@@ -14,9 +14,15 @@ class Shelves extends React.Component {
         </div>
         <div className="list-books-content">
           <div>
-            <ListBooksOnShelf section={"wantToRead"} books={this.props.books}/>
-            <ListBooksOnShelf section={"currentlyReading"} books={this.props.books}/>
-            <ListBooksOnShelf section={"read"}
+            <ListBooksOnShelf
+            title={"Want to Read"}
+            section={"wantToRead"} books={this.props.books}/>
+            <ListBooksOnShelf
+            title={"Currently Reading"}
+            section={"currentlyReading"} books={this.props.books}/>
+            <ListBooksOnShelf
+            title={"Have Read"}
+            section={"read"}
             books={this.props.books}/>
           </div>
         </div>
