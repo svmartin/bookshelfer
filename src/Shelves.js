@@ -20,17 +20,23 @@ class Shelves extends React.Component {
             <ListBooksOnShelf
             title={"Want to Read"}
             section={"wantToRead"}
-            books={this.props.books}/>
+            books={this.props.books.filter((book) => {
+              book.shelf === "wantToRead"
+            })}/>
 
             <ListBooksOnShelf
             title={"Currently Reading"}
             section={"currentlyReading"}
-            books={this.props.books}/>
+            books={this.props.books.filter((book) => {
+              book.shelf === "currentlyReading"
+            })}/>
 
             <ListBooksOnShelf
             title={"Have Read"}
             section={"read"}
-            books={this.props.books}/>
+            books={this.props.books.filter((book) => {
+              book.shelf === "read"
+            })}/>
           </div>
         </div>
         <OpenSearch />
