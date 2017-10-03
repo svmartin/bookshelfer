@@ -17,7 +17,7 @@ class ListBooksOnShelf extends React.Component {
           <ol className="books-grid">
             {this.props.books.map((book) => (
               // <Book key={book.id} book={book} />
-              <li>
+              <li key={book.id}>
                 <div className="book">
                   <div className="book-top">
                   <div
@@ -25,12 +25,12 @@ class ListBooksOnShelf extends React.Component {
                     style={{
                       width: 128,
                       height: 193,
-                      backgroundImage: "url(" + this.props.book.imageLinks.thumbnail + ")"
+                      backgroundImage: "url(" + book.imageLinks.thumbnail + ")"
                     }}
                   />
                   <ChangeShelf />
                 </div>
-                <div className="book-title">{this.props.book.title}</div>
+                <div className="book-title">{book.title}</div>
               </div>
               </li>
             ))}
