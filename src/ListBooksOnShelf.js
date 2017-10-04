@@ -9,12 +9,13 @@ class ListBooksOnShelf extends React.Component {
   // }
 
   render() {
+
     return (
       <div className="bookshelf">
         <h2 className="bookshelf-title">{this.props.title}</h2>
         <div className="bookshelf-books">
           <ol className="books-grid">
-            {this.props.books.map((book) => (
+            {this.props.filteredBooks.map((book) => (
               // <Book key={book.id} book={book} />
               <li key={book.id}>
                 <div className="book">
@@ -43,6 +44,5 @@ class ListBooksOnShelf extends React.Component {
 export default ListBooksOnShelf
 
 ListBooksOnShelf.propTypes = {
-  section: PropTypes.string.isRequired,
-  books: PropTypes.array.isRequired
+  filteredBooks: PropTypes.array.isRequired
 }
