@@ -15,20 +15,19 @@ class Search extends React.Component {
   }
 
   updateQuery = (query) => {
-    this.setState(
-      { query: query }
-    )
-
-    if (query) {
-      BooksAPI.search(query).then((books) => {
-        if (!books.error) {
-          this.setState({ results: books })
-        } else {
-          this.setState({ resulsts: []})
-          console.log(books.error)
-        }
+    if (!query) {
+      this.setState({
+        query: '',
+        results: []
       })
-    }
+    } else {
+        this.setState({ query: query })
+        BooksAPI.search(query).then((books) => {
+          if (books) {
+            this.setState({ results: books })
+          }
+        })
+      }
   }
 
   render() {
