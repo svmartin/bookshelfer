@@ -19,20 +19,20 @@ class Shelves extends React.Component {
         <div className="list-books-content">
         {console.log(this.props.books)}
           <div>
-          {/* not keen on filtering 3 times, but will try
-            because I already have this.props.books available
-          */}
             <ListBooksOnShelf
             title={"Want to Read"}
-            filteredBooks={wants}/>
+            filteredBooks={wants}
+            moveBook={this.props.moveBook}/>
 
             <ListBooksOnShelf
             title={"Currently Reading"}
-            filteredBooks={currents}/>
+            filteredBooks={currents}
+            moveBook={this.props.moveBook}/>
 
             <ListBooksOnShelf
             title={"Have Read"}
-            filteredBooks={haveReads}/>
+            filteredBooks={haveReads}
+            moveBook={this.props.moveBook}/>
           </div>
         </div>
         <OpenSearch />

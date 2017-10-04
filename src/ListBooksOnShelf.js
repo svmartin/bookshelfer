@@ -28,7 +28,7 @@ class ListBooksOnShelf extends React.Component {
                       backgroundImage: "url(" + book.imageLinks.thumbnail + ")"
                     }}
                   />
-                  <ChangeShelf />
+                  <ChangeShelf book={book} moveBook={this.props.moveBook}/>
                 </div>
                 <div className="book-title">{book.title}</div>
               </div>
