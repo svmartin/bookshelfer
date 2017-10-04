@@ -24,7 +24,7 @@ class BooksApp extends React.Component {
   // current state directly...copy, modify, re-render
   moveBook = (book, shelf) => {
     BooksAPI.update(book, shelf).then((response) => {
-      book.shelf = shelf
+      console.log(book, shelf)
       this.getAllBooks()
     })
   }
@@ -35,14 +35,14 @@ class BooksApp extends React.Component {
         <Route exact path="/"
           render={() =>
           <Shelves
-          onChangeShelf={this.moveBook}
+          moveBook={this.moveBook}
           books={this.state.books}
           />}
         />
         <Route exact path="/search"
           render={() =>
           <Search
-          onChangeShelf={this.moveBook}
+          moveBook={this.moveBook}
         />}
         />
       </div>

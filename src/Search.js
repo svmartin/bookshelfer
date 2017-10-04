@@ -1,6 +1,7 @@
 import React from 'react'
 import * as BooksAPI from './BooksAPI'
-import ChangeShelf from './ChangeShelf'
+import BooksApp from './App'
+// import ChangeShelf from './ChangeShelf'
 import { Link } from 'react-router-dom'
 
 class Search extends React.Component {
@@ -64,7 +65,24 @@ class Search extends React.Component {
                           backgroundImage: "url(" + book.imageLinks.thumbnail + ")"
                         }}
                       />
-                      <ChangeShelf />
+                      <div className="book-shelf-changer">
+                        <select
+                        value={book.shelf}
+                        onChange={(event) => (
+                          this.props.moveBook(book, event.target.value)
+                        )}
+                        >
+                          <option value="none" disabled>
+                            Move to...
+                                            </option>
+                          <option value="currentlyReading">
+                            Currently Reading
+                                            </option>
+                          <option value="wantToRead">Want to Read</option>
+                          <option value="read">Read</option>
+                          <option value="none">None</option>
+                        </select>
+                      </div>
                     </div>
                     <div className="book-title">{book.title}</div>
                   </div>
