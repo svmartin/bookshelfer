@@ -2,6 +2,7 @@ import React from 'react'
 import Book from './Book'
 import * as BooksAPI from './BooksAPI'
 // import BooksApp from './App'
+import _ from 'lodash'
 
 import { Link } from 'react-router-dom'
 
@@ -35,10 +36,10 @@ class Search extends React.Component {
 
   render() {
     let { results, query } = this.state
-    let { books } = this.props
+    let { book, books } = this.props
 
-    
-
+    let newResults = _.unionBy(books, results, 'id')
+    console.log(newResults)
     return (
       <div className="search-books">
         <div className="search-books-bar">
@@ -60,7 +61,7 @@ class Search extends React.Component {
             <ol className="books-grid">
 
               {/* map over search results here */}
-              { results.map((book) => (
+              { newResults.map((book) => (
                 <Book book={book} key={book.id} moveBook={this.props.moveBook}/>
               ))}
 
