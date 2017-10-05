@@ -34,6 +34,7 @@ class Search extends React.Component {
 
 
   render() {
+    let { results, query } = this.state
     return (
       <div className="search-books">
         <div className="search-books-bar">
@@ -45,23 +46,23 @@ class Search extends React.Component {
             <input
             type="text"
             placeholder="Search by title or author"
-            value={this.state.query}
+            value={query}
             onChange={(event) => this.updateQuery(event.target.value)}
             />
           </div>
         </div>
         <div className="search-books-results">
-          { this.state.results.length > 0 && (
+          { results.length > 0 && (
             <ol className="books-grid">
 
               {/* map over search results here */}
-              {this.state.results.map((book) => (
+              { results.map((book) => (
                 <Book book={book} key={book.id} moveBook={this.props.moveBook}/>
               ))}
 
             </ol>
           )} {/*how to deal with no search results?*/}
-          { this.state.results.length === 0 && (
+          { results.length === 0 && (
             <h1>0 results</h1>
           )}
         </div>
