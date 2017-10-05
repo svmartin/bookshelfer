@@ -56,7 +56,7 @@ class Search extends React.Component {
 
               {/* map over search results here */}
               {this.state.results.map((book) => (
-                <Book book={book} key={book.id}/>
+                <Book book={book} key={book.id} moveBook={this.props.moveBook}/>
               ))}
 
             </ol>
