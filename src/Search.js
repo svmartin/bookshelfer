@@ -40,6 +40,7 @@ class Search extends React.Component {
     // if in books, use shelf...if not in books, set shelf to 'none'
     let newResults = _.unionBy(books, results, 'id')
     console.log(newResults)
+    
     return (
       <div className="search-books">
         <div className="search-books-bar">
