@@ -1,6 +1,5 @@
 import React from 'react'
-// import Book from './Book'
-import ChangeShelf from './ChangeShelf'
+import Book from './Book'
 import PropTypes from 'prop-types'
 
 class ListBooksOnShelf extends React.Component {
@@ -17,22 +16,7 @@ class ListBooksOnShelf extends React.Component {
           <ol className="books-grid">
             {this.props.filteredBooks.map((book) => (
               // <Book key={book.id} book={book} />
-              <li key={book.id}>
-                <div className="book">
-                  <div className="book-top">
-                  <div
-                    className="book-cover"
-                    style={{
-                      width: 128,
-                      height: 193,
-                      backgroundImage: "url(" + book.imageLinks.thumbnail + ")"
-                    }}
-                  />
-                  <ChangeShelf book={book} moveBook={this.props.moveBook}/>
-                </div>
-                <div className="book-title">{book.title}</div>
-              </div>
-              </li>
+              <Book book={book} key={book.id} moveBook={this.props.moveBook} />
             ))}
           </ol>
         </div>

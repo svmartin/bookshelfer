@@ -4,22 +4,23 @@ import ChangeShelf from './ChangeShelf'
 class Book extends React.Component {
 
   render() {
+    const { book, moveBook} = this.props
     return (
-      <li>
+      <li key={book.id}>
         <div className="book">
           <div className="book-top">
-          <div
-            className="book-cover"
-            style={{
-              width: 128,
-              height: 193,
-              backgroundImage: "url(" + this.props.book.imageLinks.thumbnail + ")"
-            }}
-          />
-          <ChangeShelf />
+            <div
+              className="book-cover"
+              style={{
+                width: 128,
+                height: 193,
+                backgroundImage: "url(" + book.imageLinks.thumbnail + ")"
+              }}
+            />
+            <ChangeShelf book={book} moveBook={moveBook}/>
+          </div>
+          <div className="book-title">{book.title}</div>
         </div>
-        <div className="book-title">{this.props.book.title}</div>
-      </div>
       </li>
     )
   }
