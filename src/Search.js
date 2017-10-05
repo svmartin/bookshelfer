@@ -35,6 +35,10 @@ class Search extends React.Component {
 
   render() {
     let { results, query } = this.state
+    let { books } = this.props
+
+    
+
     return (
       <div className="search-books">
         <div className="search-books-bar">
