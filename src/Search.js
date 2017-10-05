@@ -37,7 +37,7 @@ class Search extends React.Component {
   render() {
     let { results, query } = this.state
     let { book, books } = this.props
-
+    // if in books, use shelf...if not in books, set shelf to 'none'
     let newResults = _.unionBy(books, results, 'id')
     console.log(newResults)
     return (
