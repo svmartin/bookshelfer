@@ -16,7 +16,6 @@ class Shelves extends React.Component {
           <h1>Mis Libros</h1>
         </div>
         <div className="list-books-content">
-        {console.log(this.props.books)}
           <div>
             <ListBooksOnShelf
             title={"Want to Read"}
@@ -43,5 +42,4 @@ export default Shelves;
 
 Shelves.propTypes = {
   books: PropTypes.array.isRequired,
-  moveBooks: PropTypes.func.isRequired
 }

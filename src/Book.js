@@ -10,6 +10,7 @@ class Book extends React.Component {
       <li key={book.id}>
         <div className="book">
           <div className="book-top">
+          { book.imageLinks.thumbnail &&
             <div
               className="book-cover"
               style={{
@@ -18,6 +19,8 @@ class Book extends React.Component {
                 backgroundImage: "url(" + book.imageLinks.thumbnail + ")"
               }}
             />
+          }
+
             <ChangeShelf book={book} moveBook={moveBook}/>
           </div>
           <div className="book-title">{book.title}</div>

@@ -33,7 +33,7 @@ class Search extends React.Component {
 
   render() {
     let { results, query } = this.state
-    let { books } = this.props
+    let { books, moveBook } = this.props
 
     /*  # using lodash to merge books on shelf with results...
         # books on shelf replace books in results, so that
@@ -41,7 +41,6 @@ class Search extends React.Component {
     */
 
     let newResults = _.unionBy(books, results, 'id')
-    console.log(newResults)
 
     return (
       <div className="search-books">
@@ -65,7 +64,7 @@ class Search extends React.Component {
 
               {/* map over search results here */}
               { newResults.map((book) => (
-                <Book book={book} key={book.id} moveBook={this.props.moveBook}/>
+                <Book book={book} key={book.id} moveBook={moveBook}/>
               ))}
 
             </ol>
@@ -83,5 +82,6 @@ class Search extends React.Component {
 export default Search
 
 Search.propTypes = {
-  books: PropTypes.array.isRequired
+  books: PropTypes.array.isRequired,
+  moveBook: PropTypes.func.isRequired
 }

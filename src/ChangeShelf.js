@@ -5,7 +5,7 @@ class ChangeShelf extends React.Component {
 
   render() {
     const { book, moveBook } = this.props
-    console.log("book.shelf: ", book.shelf)
+    
     return(
       <div className="book-shelf-changer">
         <select
