@@ -1,9 +1,6 @@
 import React from 'react'
 
 class ChangeShelf extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // }
 
   render() {
     const { book, moveBook } = this.props

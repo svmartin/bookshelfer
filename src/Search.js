@@ -31,13 +31,11 @@ class Search extends React.Component {
       }
   }
 
-
-
   render() {
     let { results, query } = this.state
     let { book, books } = this.props
 
-    /*  # using lodash to merge books on shelf with results
+    /*  # using lodash to merge books on shelf with results...
         # books on shelf replace books in results, so that
         # shelf state is shown in results
     */
