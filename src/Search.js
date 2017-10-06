@@ -1,7 +1,6 @@
 import React from 'react'
 import Book from './Book'
 import * as BooksAPI from './BooksAPI'
-// import BooksApp from './App'
 import _ from 'lodash'
 
 import { Link } from 'react-router-dom'
@@ -37,10 +36,15 @@ class Search extends React.Component {
   render() {
     let { results, query } = this.state
     let { book, books } = this.props
-    // if in books, use shelf...if not in books, set shelf to 'none'
+
+    /*  # using lodash to merge books on shelf with results
+        # books on shelf replace books in results, so that
+        # shelf state is shown in results
+    */
+
     let newResults = _.unionBy(books, results, 'id')
     console.log(newResults)
-    
+
     return (
       <div className="search-books">
         <div className="search-books-bar">
