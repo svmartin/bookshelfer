@@ -3,9 +3,6 @@ import Book from './Book'
 import PropTypes from 'prop-types'
 
 class ListBooksOnShelf extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // }
 
   render() {
 

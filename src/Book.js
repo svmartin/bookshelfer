@@ -4,7 +4,7 @@ import ChangeShelf from './ChangeShelf'
 class Book extends React.Component {
 
   render() {
-    const { book, moveBook} = this.props
+    const { book, moveBook } = this.props
     return (
       <li key={book.id}>
         <div className="book">
