@@ -25,5 +25,7 @@ class ListBooksOnShelf extends React.Component {
 export default ListBooksOnShelf
 
 ListBooksOnShelf.propTypes = {
-  filteredBooks: PropTypes.array.isRequired
+  filteredBooks: PropTypes.array.isRequired,
+  title: PropTypes.string.isRequired,
+  moveBook: PropTypes.func.isRequired
 }

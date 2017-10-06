@@ -42,5 +42,6 @@ class Shelves extends React.Component {
 export default Shelves;
 
 Shelves.propTypes = {
-  books: PropTypes.array.isRequired
+  books: PropTypes.array.isRequired,
+  moveBooks: PropTypes.func.isRequired
 }

@@ -2,8 +2,8 @@ import React from 'react'
 import Book from './Book'
 import * as BooksAPI from './BooksAPI'
 import _ from 'lodash'
-
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 class Search extends React.Component {
   constructor(props) {
@@ -33,7 +33,7 @@ class Search extends React.Component {
 
   render() {
     let { results, query } = this.state
-    let { book, books } = this.props
+    let { books } = this.props
 
     /*  # using lodash to merge books on shelf with results...
         # books on shelf replace books in results, so that
@@ -81,3 +81,7 @@ class Search extends React.Component {
 }
 
 export default Search
+
+Search.propTypes = {
+  books: PropTypes.object.isRequired
+}
