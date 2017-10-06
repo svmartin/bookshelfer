@@ -83,5 +83,5 @@ class Search extends React.Component {
 export default Search
 
 Search.propTypes = {
-  books: PropTypes.object.isRequired
+  books: PropTypes.array.isRequired
 }
