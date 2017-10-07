@@ -1,4 +1,4 @@
 # MyReads Project
 Small Bookshelf application to learn React basics
-http://trader-rabbit-50428.netlify.com
+http://exporter-ant-20320.netlify.com/
 # bookshelfer
