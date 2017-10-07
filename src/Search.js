@@ -1,9 +1,10 @@
 import React from 'react'
 import Book from './Book'
 import * as BooksAPI from './BooksAPI'
-import _ from 'lodash'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
+import _ from 'lodash'
+
 
 class Search extends React.Component {
   constructor(props) {
@@ -27,6 +28,8 @@ class Search extends React.Component {
           if (books) {
             this.setState({ results: books })
           }
+        }).catch(error => {
+          console.log(error)
         })
       }
   }
@@ -40,7 +43,24 @@ class Search extends React.Component {
         # shelf state is shown in results
     */
 
-    let newResults = _.unionBy(books, results, 'id')
+    // -loop over books in bookshelf
+    // -get index of itemBook in searchResults array if the same id
+    // is in the bookshelf array
+    // -if there is a match,
+    // 1: filter and return all books except for book that is a match
+    // 2: add book, which now has book.shelf to results
+    // This should make sure that books that appear in search results
+    // that are also in bookshelf have the correct shelf state
+
+    books.forEach(book => {
+    let index = _.findIndex(results, item => item.id === book.id);
+      if(index !== -1) { // if there is a match
+          // keep all books in results that do NOT match
+          results = results.filter(item => item.id !== book.id);
+          // add matched book object to results
+          results = [...results, book];
+      }
+    });
 
     return (
       <div className="search-books">
@@ -63,7 +83,7 @@ class Search extends React.Component {
             <ol className="books-grid">
 
               {/* map over search results here */}
-              { newResults.map((book) => (
+              { results.map((book) => (
                 <Book book={book} key={book.id} moveBook={moveBook}/>
               ))}
 
