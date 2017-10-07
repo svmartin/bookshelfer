@@ -3,8 +3,6 @@ import Book from './Book'
 import * as BooksAPI from './BooksAPI'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import _ from 'lodash'
-
 
 class Search extends React.Component {
   constructor(props) {
@@ -53,14 +51,14 @@ class Search extends React.Component {
     // that are also in bookshelf have the correct shelf state
 
     books.forEach(book => {
-    let index = _.findIndex(results, item => item.id === book.id);
-      if(index !== -1) { // if there is a match
+    let matchFound = results.findIndex((item) => item.id === book.id);
+      if(matchFound !== -1) { // if there is a match
           // keep all books in results that do NOT match
           results = results.filter(item => item.id !== book.id);
           // add matched book object to results
           results = [...results, book];
       }
-    });
+    })
 
     return (
       <div className="search-books">
