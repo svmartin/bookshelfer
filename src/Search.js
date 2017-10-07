@@ -36,15 +36,9 @@ class Search extends React.Component {
     let { results, query } = this.state
     let { books, moveBook } = this.props
 
-    /*  # using lodash to merge books on shelf with results...
-        # books on shelf replace books in results, so that
-        # shelf state is shown in results
-    */
-
     // -loop over books in bookshelf
-    // -get index of itemBook in searchResults array if the same id
-    // is in the bookshelf array
-    // -if there is a match,
+    // -get index of itemBook in searchResults array
+    // if the same id is in the bookshelf array, there is a match, so:
     // 1: filter and return all books except for book that is a match
     // 2: add book, which now has book.shelf to results
     // This should make sure that books that appear in search results
