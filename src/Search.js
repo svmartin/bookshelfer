@@ -40,10 +40,10 @@ class Search extends React.Component {
     // -get index of itemBook in searchResults array
     // if the same id is in the bookshelf array, there is a match, so:
     // 1: filter and return all books except for book that is a match
-    // 2: add book, which now has book.shelf to results
+    // 2: add book, which has book.shelf/state to results
     // This should make sure that books that appear in search results
     // that are also in bookshelf have the correct shelf state
-
+    // Got help from Udacity live help for the following lines 47-55
     books.forEach(book => {
     let matchFound = results.findIndex((item) => item.id === book.id);
       if(matchFound !== -1) { // if there is a match
