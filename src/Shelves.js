@@ -6,6 +6,8 @@ import ListBooksOnShelf from './ListBooksOnShelf'
 class Shelves extends React.Component {
 
   render() {
+    // combine map and filter instead of using three separate filters?
+    // received udacity help for this part
     let wants = this.props.books.filter((book) => book.shelf === "wantToRead" )
     let currents = this.props.books.filter((book) => book.shelf === "currentlyReading" )
     let haveReads = this.props.books.filter((book) => book.shelf === "read" )
