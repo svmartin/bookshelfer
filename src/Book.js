@@ -20,10 +20,10 @@ class Book extends React.Component {
             }}
           />
 
-          <ChangeShelf book={book} moveBook={ moveBook }/>
+          <ChangeShelf book={ book } moveBook={ moveBook }/>
         </div>
 
-          <div className="book-title">{book.title}</div>
+          <div className="book-title">{ book.title }</div>
           {/* Warning: Each child..."key" prop...fix!*/}
           { book.authors.length > 0 &&
             book.authors.map((author, i) => (
