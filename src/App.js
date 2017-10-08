@@ -24,7 +24,6 @@ class BooksApp extends React.Component {
   // current state directly...copy, modify, re-render
   moveBook = (book, shelf) => {
     BooksAPI.update(book, shelf).then((response) => {
-      book.shelf = shelf
       this.getAllBooks()
     }).catch(error => {
       console.log(error)

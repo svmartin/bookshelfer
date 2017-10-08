@@ -15,21 +15,14 @@ class Search extends React.Component {
   }
 
   updateQuery = (query) => {
-    if (!query) {
-      this.setState({
-        query: '',
-        results: []
-      })
-    } else {
-        this.setState({ query: query })
-        BooksAPI.search(query).then((books) => {
-          if (books) {
-            this.setState({ results: books })
-          }
-        }).catch(error => {
-          console.log(error)
-        })
+    this.setState({ query: query })
+    BooksAPI.search(query).then((books) => {
+      if (books) {
+        this.setState({ results: books})
       }
+    }).catch(error => {
+      console.log(error)
+    })
   }
 
   render() {
@@ -43,16 +36,18 @@ class Search extends React.Component {
     // 2: add book, which has book.shelf/state to results
     // This should make sure that books that appear in search results
     // that are also in bookshelf have the correct shelf state
-    // Got help from Udacity live help for the following lines 47-55
-    books.forEach(book => {
-    let matchFound = results.findIndex((item) => item.id === book.id);
-      if(matchFound !== -1) { // if there is a match
-          // keep all books in results that do NOT match
-          results = results.filter(item => item.id !== book.id);
-          // add matched book object to results
-          results = [...results, book];
-      }
-    })
+    // Received help from Udacity live help for the following lines 41-50
+    if (results) {
+      books.forEach(book => {
+      let matchFound = results.findIndex((item) => item.id === book.id);
+        if(matchFound !== -1) { // if there is a match
+            // keep all books in results that do NOT match
+            results = results.filter(item => item.id !== book.id);
+            // add matched book object to results
+            results = [...results, book];
+        }
+      })
+    }
 
     return (
       <div className="search-books">
